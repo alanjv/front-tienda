@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { productosServicio } from '../servicios/productoServicios';
+import { defaultProducts } from '../config/config';
 
 export class Productos extends Component {
 
@@ -26,7 +27,7 @@ export class Productos extends Component {
 
     componentDidMount() {
         if (this.noAppiConect) {
-            this.setState({ categorias: defaultCategorias })
+            this.setState({ categorias: defaultProducts })
         } else {
             this.categoriasServicio.obtenerCategorias.then(data => this.setState({ productos: data }))
         }
