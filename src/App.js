@@ -5,6 +5,7 @@ import { defaultUser } from "./config/config";
 import './App.css';
 import { Button } from 'primereact/button';
 import Swal from "sweetalert2";
+import { Categorias } from "./components/Categorias";
 
 
 
@@ -129,14 +130,6 @@ export default class App extends Component {
   }
 
 
-
-  categories = () => {
-    return (
-      <>
-      </>
-    )
-  }
-
   products = () => {
     return (
       <>
@@ -166,7 +159,7 @@ export default class App extends Component {
       <>
         {this.state.alertDialog && this.alertDialog()}
         {!this.state.isAuth && this.login()}
-        {this.state.isAuth && this.categories()}
+        {this.state.isAuth && <Categorias />}
         {this.state.isAuth && this.products()}
       </>
     )
